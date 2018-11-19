@@ -1,0 +1,35 @@
+<h2>Members List</h2>
+<ul class="members">
+  <li [class.member]="hero === selectedMember" *ngFor="let member of members" (click)="onSelectMember(member);">
+    <span>{{member.id}}</span>
+    {{member.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedMember">
+  <h2>{{selectedMember.name | uppercase }} Details</h2>
+  <div>
+    <span class="badge">id:</span>{{selectedMember.id}}</div>
+  <div>
+    <label for="selectedMemberName">
+      <input type="text" [(ngModel)]="selectedMember.name" placeholder="Member name here">
+    </label>
+  </div>
+  <div>
+    <span>Father Name :</span>{{selectedMember.fatherName }}</div>
+  <div>
+    <span>Mother Name :</span>{{selectedMember.motherName }}</div>
+  <div>
+    <span>Spouse Name :</span>{{selectedMember.spouseName }}</div>
+  <div>
+    <span>Children :</span>{{selectedMember.noOfChildren }}</div>
+  <div>
+    <span>Boys :</span>{{selectedMember.noOfBoys }}</div>
+  <div>
+    <span>Girls :</span>{{selectedMember.noOfGirls }}</div>
+  <div *ngIf="false">
+    <span>Name of Boys :</span>{{selectedMember.fatherName }}</div>
+  <div *ngIf="false">
+    <span>Name of Girls :</span>{{selectedMember.fatherName }}</div>
+
+</div>
